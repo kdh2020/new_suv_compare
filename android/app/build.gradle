@@ -1,0 +1,27 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "com.kdh2020.newsuvcompare"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.kdh2020.newsuvcompare"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.0"
+    }
+}
+
+tasks.register("syncWebAssets", Copy) {
+    from(rootProject.file("..")) {
+        include "index.html"
+        include "styles.css"
+        include "app.js"
+    }
+    into(layout.projectDirectory.dir("src/main/assets/www"))
+}
+
+preBuild.dependsOn("syncWebAssets")

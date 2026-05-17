@@ -28,3 +28,7 @@ npx serve .
 ```
 
 로컬 서버를 사용하려면 위 명령으로 실행할 수 있습니다.
+
+## Android WebView 앱
+
+`android` 폴더에 WebView 기반 안드로이드 앱 프로젝트가 포함되어 있습니다. Android Studio에서 `android` 폴더를 열면 현재 웹 앱 파일을 앱 asset으로 복사해 로컬 웹 앱 형태로 실행합니다.
