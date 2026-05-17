@@ -25,3 +25,7 @@ For Play Store release, create a signed Android App Bundle:
 ```
 
 Release signing credentials are intentionally not included in this repository.
+
+## Windows path note
+
+This project includes `android.overridePathCheck=true` in `gradle.properties` so Android Studio can build from Windows paths that contain Korean or other non-ASCII characters.
