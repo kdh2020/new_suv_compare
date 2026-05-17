@@ -624,6 +624,82 @@ vehicles.forEach((vehicle) => {
   }));
 });
 
+const currentPromotionOverrides = {
+  "hyundai-venue": [
+    { type: "기본 구매혜택", amount: 0, condition: "공식 5월 승용/RV 구매혜택 기준, 별도 차종 기본 할인 미표기. 블루멤버스/전용카드 혜택은 견적 시 확인", period: "2026.05.17 기준" }
+  ],
+  "hyundai-kona": [
+    { type: "기본 구매혜택", amount: 0, condition: "공식 5월 승용/RV 구매혜택 기준, 별도 차종 기본 할인 미표기. 전용카드 일시불/세이브오토 가능 조건 확인 필요", period: "2026.05.17 기준" }
+  ],
+  "hyundai-kona-hybrid": [
+    { type: "기본 구매혜택", amount: 0, condition: "코나와 동일 기준. 하이브리드 세제혜택은 판매가에 반영되며, 월별 금융/카드 조건은 견적 시 확인", period: "2026.05.17 기준" }
+  ],
+  "hyundai-tucson": [
+    { type: "기본 구매혜택", amount: 0, condition: "공식 5월 승용/RV 구매혜택 기준, 별도 차종 기본 할인 미표기. 세이브오토/전용카드 조건 확인 필요", period: "2026.05.17 기준" }
+  ],
+  "hyundai-tucson-hybrid": [
+    { type: "기본 구매혜택", amount: 0, condition: "투싼과 동일 기준. 하이브리드 세제혜택 및 금융 조건은 최종 견적서 기준", period: "2026.05.17 기준" }
+  ],
+  "hyundai-santafe": [
+    { type: "차량반납 유예형 할부", amount: 300, condition: "싼타페 5월 최대할인 기준 300만 원, 60개월 6.1%, 유예율 55% 예시", period: "2026.05.01~05.31" },
+    { type: "전용카드 프로모션", amount: 30, condition: "2천만 원 이상 결제 및 블루 세이브-오토 이용 시 15만 즉시 할인 + 15만 캐시백", period: "2026.05.01~05.31" }
+  ],
+  "hyundai-santafe-hybrid": [
+    { type: "전용카드 프로모션", amount: 30, condition: "싼타페 HEV 포함, 15만 즉시 할인 + 15만 캐시백 조건", period: "2026.05.01~05.31" }
+  ],
+  "kia-seltos": [
+    { type: "기타 혜택", amount: 30, condition: "세이브 오토 30만, 기아멤버스 포인트 7/14/21/28만, 트레이드인 50만 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-seltos-hybrid": [
+    { type: "기타 혜택", amount: 30, condition: "셀토스 계열 기준 세이브 오토 30만, 멤버스 포인트/트레이드인 조건 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-niro": [
+    { type: "기타 혜택", amount: 30, condition: "세이브 오토 30만, 기아멤버스 포인트 7/14/21/28만, 트레이드인 50만 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-sportage": [
+    { type: "기타 혜택", amount: 30, condition: "세이브 오토 30만, 기아멤버스 포인트 7/14/21/28만, 트레이드인 50만 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-sportage-hybrid": [
+    { type: "기타 혜택", amount: 30, condition: "스포티지 계열 기준 세이브 오토 30만, 멤버스 포인트/트레이드인 조건 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-sorento": [
+    { type: "생산월 조건", amount: 200, condition: "2026년 3월 생산분 200만 원, 하이브리드 제외. 세이브 오토 30/50만 및 트레이드인 50만 별도", period: "2026.05.17 기준" }
+  ],
+  "kia-sorento-hybrid": [
+    { type: "기타 혜택", amount: 50, condition: "쏘렌토 HEV는 생산월 200만 조건 제외. 세이브 오토 최대 50만, 멤버스 포인트/트레이드인 별도", period: "2026.05.17 기준" }
+  ],
+  "renault-arkana": [
+    { type: "무이자/저금리", amount: 142, condition: "가솔린 36개월 0%, 하이브리드 36개월 1.99%. 전시차 20만, 재구매 최대 80만, 해피케어/정비쿠폰 약 42만 상당", period: "2026.05 기준" }
+  ],
+  "renault-arkana-hybrid": [
+    { type: "저금리", amount: 142, condition: "하이브리드 36개월 1.99%, 전시차/재구매/해피케어 조건 별도", period: "2026.05 기준" }
+  ],
+  "renault-grand-koleos": [
+    { type: "최대 혜택", amount: 650, condition: "2026년 1월 이전 생산분 36개월 0%, 25년 생산분 최대 200만, 에스카파드 200만, 제휴할부 150만, 전시차/재구매 조건 포함", period: "2026.05 기준" }
+  ],
+  "renault-grand-koleos-hybrid": [
+    { type: "최대 혜택", amount: 650, condition: "그랑 콜레오스 HEV 포함. techno 트림은 일부 할부 조건 제외, 최종 조건은 전시장 확인", period: "2026.05 기준" }
+  ],
+  "kgm-tivoli": [
+    { type: "할부/로열티", amount: 20, condition: "공식 온라인스토어 기준 공통 SE 혜택 미대상. 로열티 2대째 10만/3대째 20만 및 월별 조건은 대리점 확인", period: "2026.05.17 확인" }
+  ],
+  "kgm-korando": [
+    { type: "할부/로열티", amount: 20, condition: "공식 온라인스토어 기준 공통 SE 혜택 미대상. 로열티 최대 20만 및 월별 조건은 대리점 확인", period: "2026.05.17 확인" }
+  ],
+  "kgm-torres": [
+    { type: "온라인스토어 SE 혜택", amount: 0, condition: "토레스 HEV SE: SE 패키지 무상, 전/측/후면 틴팅·블랙박스·PPF 3종, 12개월 무이자 또는 3.9~5.4% 스마트할부", period: "공식 온라인스토어 확인" }
+  ],
+  "kgm-actyon": [
+    { type: "할부/로열티", amount: 20, condition: "공식 온라인스토어 기준 공통 SE 혜택 미대상. 로열티 최대 20만 및 월별 조건은 대리점 확인", period: "2026.05.17 확인" }
+  ]
+};
+
+vehicles.forEach((vehicle) => {
+  if (currentPromotionOverrides[vehicle.id]) {
+    vehicle.promotions = currentPromotionOverrides[vehicle.id];
+  }
+});
+
 const state = {
   brand: "all",
   segment: "all",
