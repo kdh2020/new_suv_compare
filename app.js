@@ -463,6 +463,167 @@ const vehicles = [
   }
 ];
 
+vehicles.push({
+  id: "kia-seltos-hybrid",
+  brand: "기아",
+  model: "셀토스 하이브리드",
+  segment: "소형",
+  popularity: 91,
+  summary: "셀토스의 실용적인 차체에 하이브리드 효율을 더한 소형 SUV",
+  imageTone: ["#d9f4df", "#f5e7c6"],
+  specs: { length: 4390, width: 1800, height: 1600, wheelbase: 2630, weight: 1460, efficiency: 18.6, displacement: 1580, fuel: "하이브리드", drivetrain: "FWD" },
+  safety: "전방 충돌방지, 후측방 충돌방지, 스마트 크루즈",
+  convenience: "파노라마 디스플레이, 전자식 변속 레버, 실내 V2L",
+  trims: [
+    { name: "트렌디 HEV", basePrice: 2898, options: ["스타일"], finalPrice: 3007 },
+    { name: "프레스티지 HEV", basePrice: 3120, options: ["컨비니언스"], finalPrice: 3260 },
+    { name: "시그니처 HEV", basePrice: 3450, options: ["모니터링"], finalPrice: 3630 },
+    { name: "X-Line HEV", basePrice: 3610, options: ["하만카돈"], finalPrice: 3800 }
+  ],
+  packages: [
+    { name: "스타일", price: 109 },
+    { name: "컨비니언스", price: 64 },
+    { name: "실내 V2L", price: 69 }
+  ],
+  promotions: [{ type: "친환경 혜택", amount: 130, condition: "HEV 구매 지원 예시", period: "2026 예시" }]
+});
+
+const trimOverrides = {
+  "hyundai-venue": [
+    ["프리미엄", 2146, ["현대 스마트센스", "스타일"]],
+    ["플럭스", 2413, ["테크", "투톤 컬러 루프"]]
+  ],
+  "hyundai-kona": [
+    ["스마트", 1950, ["현대 스마트센스 I"]],
+    ["모던 초이스", 2141, ["밸류 II"]],
+    ["프리미엄", 2288, ["디자인 I"]],
+    ["인스퍼레이션", 2860, ["플래티넘"]],
+    ["블랙 익스테리어", 3175, ["블랙 전용 외관"]]
+  ],
+  "hyundai-kona-hybrid": [
+    ["모던", 3013, ["컨비니언스"]],
+    ["모던 스페셜", 3190, ["멀티미디어 내비 플러스"]],
+    ["프리미엄 스페셜", 3370, ["디자인 II"]],
+    ["인스퍼레이션", 3611, ["파킹 어시스트"]],
+    ["블랙 익스테리어", 3790, ["블랙 전용 외관"]]
+  ],
+  "hyundai-tucson": [
+    ["모던", 2805, ["익스테리어 디자인 I"]],
+    ["프리미엄", 3069, ["컴포트 II"]],
+    ["H-Pick", 3156, ["플래티넘"]],
+    ["인스퍼레이션", 3407, ["파킹 어시스트 III"]],
+    ["블랙 익스테리어", 3452, ["블랙 외관"]],
+    ["N Line", 3492, ["N Line 전용 디자인"]]
+  ],
+  "hyundai-tucson-hybrid": [
+    ["모던 HEV", 3295, ["익스테리어 디자인 I"]],
+    ["프리미엄 HEV", 3570, ["컴포트 II"]],
+    ["H-Pick HEV", 3660, ["플래티넘"]],
+    ["인스퍼레이션 HEV", 3905, ["파킹 어시스트 II"]],
+    ["블랙 익스테리어 HEV", 3950, ["블랙 외관"]],
+    ["N Line HEV", 3990, ["N Line 전용 디자인"]]
+  ],
+  "hyundai-santafe": [
+    ["익스클루시브", 3606, ["빌트인 캠 2"]],
+    ["프레스티지", 3896, ["시트플러스"]],
+    ["H-Pick", 4179, ["파킹 어시스트 플러스 I"]],
+    ["블랙 익스테리어", 4184, ["블랙 외관"]],
+    ["캘리그래피", 4484, ["BOSE 사운드"]],
+    ["블랙 잉크", 4484, ["블랙잉크 플러스"]]
+  ],
+  "hyundai-santafe-hybrid": [
+    ["익스클루시브 HEV", 3964, ["빌트인 캠 2"]],
+    ["프레스티지 HEV", 4247, ["시트플러스"]],
+    ["H-Pick HEV", 4508, ["헤드업 디스플레이"]],
+    ["블랙 익스테리어 HEV", 4542, ["블랙 외관"]],
+    ["캘리그래피 HEV", 4848, ["BOSE 사운드"]],
+    ["블랙 잉크 HEV", 4848, ["블랙잉크 플러스"]]
+  ],
+  "kia-seltos": [
+    ["트렌디", 2477, ["스타일"]],
+    ["프레스티지", 2680, ["컨비니언스"]],
+    ["시그니처", 3030, ["모니터링"]],
+    ["X-Line", 3180, ["하만카돈"]]
+  ],
+  "kia-niro": [
+    ["트렌디", 2885, ["컨비니언스"]],
+    ["프레스티지", 3200, ["드라이브 와이즈 II"]],
+    ["시그니처", 3560, ["HUD"]]
+  ],
+  "kia-sportage": [
+    ["프레스티지", 2863, ["스타일"]],
+    ["노블레스", 3195, ["12.3인치 내비게이션"]],
+    ["시그니처", 3490, ["프리미엄"]],
+    ["시그니처 X-Line", 3660, ["X-Line 전용 디자인"]]
+  ],
+  "kia-sportage-hybrid": [
+    ["프레스티지 HEV", 3330, ["스타일"]],
+    ["노블레스 HEV", 3640, ["12.3인치 내비게이션"]],
+    ["시그니처 HEV", 3950, ["프리미엄"]],
+    ["시그니처 X-Line HEV", 4120, ["X-Line 전용 디자인"]]
+  ],
+  "kia-sorento": [
+    ["프레스티지", 3580, ["드라이브 와이즈"]],
+    ["노블레스", 3890, ["컴포트"]],
+    ["시그니처", 4295, ["프리미엄"]],
+    ["X-Line", 4560, ["X-Line 전용 디자인"]]
+  ],
+  "kia-sorento-hybrid": [
+    ["프레스티지 HEV", 3940, ["드라이브 와이즈"]],
+    ["노블레스 HEV", 4250, ["컴포트"]],
+    ["시그니처 HEV", 4795, ["프리미엄"]],
+    ["X-Line HEV", 4888, ["X-Line 전용 디자인"]]
+  ],
+  "renault-arkana": [
+    ["아이코닉", 2640, ["파워 테일게이트", "BOSE 사운드"]]
+  ],
+  "renault-arkana-hybrid": [
+    ["아이코닉 E-Tech", 3313, ["360도 어라운드 뷰", "BOSE 사운드"]]
+  ],
+  "renault-grand-koleos": [
+    ["테크노", 3495, ["어시스트 패키지"]],
+    ["아이코닉", 3860, ["동승석 디스플레이"]],
+    ["에스프리 알핀", 4190, ["파노라마 루프"]]
+  ],
+  "renault-grand-koleos-hybrid": [
+    ["테크노 E-Tech", 3995, ["어시스트 패키지"]],
+    ["아이코닉 E-Tech", 4295, ["동승석 디스플레이"]],
+    ["에스프리 알핀 E-Tech", 4560, ["파노라마 루프"]]
+  ],
+  "kgm-tivoli": [
+    ["V1", 1898, ["밸류업"]],
+    ["V3", 2263, ["세이프티"]],
+    ["V5", 2410, ["컨비니언스"]],
+    ["V7", 2600, ["투톤 루프"]]
+  ],
+  "kgm-korando": [
+    ["C5", 2410, ["딥컨트롤"]],
+    ["C7", 2840, ["인포콘"]]
+  ],
+  "kgm-torres": [
+    ["T5", 2810, ["세이프티 선루프"]],
+    ["T7", 3220, ["하이디럭스"]],
+    ["블랙 에디션", 3540, ["블랙 전용 외관"]]
+  ],
+  "kgm-actyon": [
+    ["S7", 3395, ["컴포트"]],
+    ["S9", 3851, ["스마트 테일게이트"]]
+  ]
+};
+
+vehicles.forEach((vehicle) => {
+  if (!trimOverrides[vehicle.id]) return;
+  vehicle.trims = trimOverrides[vehicle.id].map(([name, basePrice, options]) => ({
+    name,
+    basePrice,
+    options,
+    finalPrice: basePrice + options.reduce((sum, optionName) => {
+      const option = vehicle.packages.find((pack) => optionName.includes(pack.name) || pack.name.includes(optionName));
+      return sum + (option?.price || 0);
+    }, 0)
+  }));
+});
+
 const state = {
   brand: "all",
   segment: "all",
