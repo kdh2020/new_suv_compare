@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New SUV Compare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-mark" href="#home" aria-label="New SUV Compare 홈">
+        <span class="brand-dot"></span>
+        <strong>SUV Compare</strong>
+      </a>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="#brands">브랜드별</a>
+        <a href="#compare">비교하기</a>
+        <a href="#simulation">시뮬레이션</a>
+        <a href="#promotions">프로모션</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기">☰</button>
+    </header>
+
+    <main>
+      <section id="home" class="hero section-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">2025 국내 소형-중형 SUV 가이드</span>
+          <h1>브랜드별 SUV 신차를 한눈에 비교하세요.</h1>
+          <p>
+            현대, 기아, 르노코리아, KGM의 인기 SUV를 가격, 제원, 할인 혜택,
+            월 할부금까지 빠르게 비교할 수 있습니다.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#compare">최대 3대 비교</a>
+            <a class="ghost-btn" href="#simulation">가격 계산하기</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="SUV 비교 요약">
+          <div class="hero-card">
+            <span>Top Pick</span>
+            <strong id="heroTopModel">싼타페</strong>
+            <small>패밀리 중형 SUV</small>
+          </div>
+          <div class="hero-card accent">
+            <span>Benefit</span>
+            <strong id="heroBenefit">최대 250만원</strong>
+            <small>mock 프로모션 예시</small>
+          </div>
+          <div class="hero-vehicle" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="section-shell tool-band" aria-label="차량 검색과 필터">
+        <div class="search-wrap">
+          <label for="searchInput">차종 검색</label>
+          <input
+            id="searchInput"
+            type="search"
+            list="modelSuggestions"
+            placeholder="예: 코나, 쏘렌토, 토레스"
+            autocomplete="off"
+          />
+          <datalist id="modelSuggestions"></datalist>
+        </div>
+        <div class="filter-group" aria-label="브랜드 필터">
+          <button class="chip is-active" data-filter-type="brand" data-value="all">전체</button>
+          <button class="chip" data-filter-type="brand" data-value="현대">현대</button>
+          <button class="chip" data-filter-type="brand" data-value="기아">기아</button>
+          <button class="chip" data-filter-type="brand" data-value="르노코리아">르노코리아</button>
+          <button class="chip" data-filter-type="brand" data-value="KGM">KGM</button>
+        </div>
+        <div class="filter-group" aria-label="세그먼트 필터">
+          <button class="chip is-active" data-filter-type="segment" data-value="all">전체</button>
+          <button class="chip" data-filter-type="segment" data-value="소형">소형</button>
+          <button class="chip" data-filter-type="segment" data-value="준중형">준중형</button>
+          <button class="chip" data-filter-type="segment" data-value="중형">중형</button>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Popular</span>
+            <h2>인기 차량 Top</h2>
+          </div>
+          <div class="slider-controls">
+            <button id="prevPopular" class="icon-btn" type="button" aria-label="이전 인기 차량">‹</button>
+            <button id="nextPopular" class="icon-btn" type="button" aria-label="다음 인기 차량">›</button>
+          </div>
+        </div>
+        <div id="popularSlider" class="popular-slider"></div>
+      </section>
+
+      <section id="brands" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Catalog</span>
+            <h2>브랜드별 SUV 라인업</h2>
+          </div>
+          <p id="resultCount" class="muted"></p>
+        </div>
+        <div id="vehicleGrid" class="vehicle-grid"></div>
+      </section>
+
+      <section id="detail" class="section-shell detail-section" hidden>
+        <div id="detailView"></div>
+      </section>
+
+      <section id="compare" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Compare</span>
+            <h2>최대 3대 나란히 비교</h2>
+          </div>
+          <button id="shareCompare" class="ghost-btn small" type="button">공유 링크 생성</button>
+        </div>
+        <div class="compare-picker">
+          <select id="compareSelect" aria-label="비교 차량 선택"></select>
+          <button id="addCompare" class="primary-btn small" type="button">비교 추가</button>
+          <button id="clearCompare" class="text-btn" type="button">초기화</button>
+        </div>
+        <p id="shareMessage" class="share-message" aria-live="polite"></p>
+        <div id="compareTable" class="compare-table-wrap"></div>
+      </section>
+
+      <section id="simulation" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Simulator</span>
+            <h2>가격 시뮬레이션</h2>
+          </div>
+        </div>
+        <div class="simulator">
+          <div class="sim-form">
+            <label>
+              차량
+              <select id="simVehicle"></select>
+            </label>
+            <label>
+              트림
+              <select id="simTrim"></select>
+            </label>
+            <div>
+              <span class="label-text">옵션 패키지</span>
+              <div id="optionList" class="option-list"></div>
+            </div>
+            <div class="loan-grid">
+              <label>
+                이자율(%)
+                <input id="interestRate" type="number" value="4.7" min="0" max="20" step="0.1" />
+              </label>
+              <label>
+                기간(개월)
+                <input id="loanMonths" type="number" value="60" min="12" max="120" step="12" />
+              </label>
+            </div>
+          </div>
+          <aside class="sim-result">
+            <span class="eyebrow">Estimated</span>
+            <h3 id="simTitle">가격 계산</h3>
+            <dl>
+              <div><dt>할인 전</dt><dd id="beforeDiscount">0만원</dd></div>
+              <div><dt>할인 혜택</dt><dd id="discountTotal">0만원</dd></div>
+              <div><dt>할인 후</dt><dd id="afterDiscount">0만원</dd></div>
+              <div class="monthly"><dt>예상 월 할부</dt><dd id="monthlyPayment">0만원</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="promotions" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Promotion</span>
+            <h2>현재 진행 중인 프로모션 모음</h2>
+          </div>
+        </div>
+        <div id="promotionGrid" class="promotion-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Mock data for 2025 SUV comparison. 실제 구매 조건은 각 제조사 공식 견적과 다를 수 있습니다.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
