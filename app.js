@@ -306,6 +306,160 @@ const vehicles = [
       { name: "4WD", price: 230 }
     ],
     promotions: [{ type: "저금리", amount: 130, condition: "론칭 특별 금리 환산", period: "2025 예시" }]
+  },
+  {
+    id: "hyundai-kona-hybrid",
+    brand: "현대",
+    model: "코나 하이브리드",
+    segment: "소형",
+    popularity: 90,
+    summary: "도심 효율과 넉넉한 소형 SUV 공간을 함께 챙긴 하이브리드 모델",
+    imageTone: ["#c8f0df", "#eaf8ff"],
+    specs: { length: 4350, width: 1825, height: 1580, wheelbase: 2660, weight: 1450, efficiency: 19.8, displacement: 1580, fuel: "하이브리드", drivetrain: "FWD" },
+    safety: "고속도로 주행 보조, 후측방 충돌방지, 내비 기반 스마트 크루즈",
+    convenience: "12.3인치 디스플레이, 디지털 키, 통풍 시트",
+    trims: [
+      { name: "모던 HEV", basePrice: 3020, options: ["컨비니언스"], finalPrice: 3190 },
+      { name: "인스퍼레이션 HEV", basePrice: 3611, options: ["파킹 어시스트"], finalPrice: 3831 }
+    ],
+    packages: [
+      { name: "컨비니언스", price: 170 },
+      { name: "파킹 어시스트", price: 120 },
+      { name: "빌트인 캠", price: 69 }
+    ],
+    promotions: [{ type: "친환경 혜택", amount: 110, condition: "하이브리드 구매 지원 예시", period: "2025 예시" }]
+  },
+  {
+    id: "hyundai-tucson-hybrid",
+    brand: "현대",
+    model: "투싼 하이브리드",
+    segment: "준중형",
+    popularity: 96,
+    summary: "준중형 SUV 공간감에 높은 연비와 정숙성을 더한 인기 하이브리드",
+    imageTone: ["#cff2d9", "#eef4f7"],
+    specs: { length: 4640, width: 1865, height: 1665, wheelbase: 2755, weight: 1685, efficiency: 16.2, displacement: 1598, fuel: "하이브리드", drivetrain: "FWD/AWD" },
+    safety: "후측방 모니터, 고속도로 주행 보조, 원격 스마트 주차",
+    convenience: "파노라믹 커브드 디스플레이, OTA, 전동 트렁크",
+    trims: [
+      { name: "프리미엄 HEV", basePrice: 3213, options: ["익스테리어 디자인"], finalPrice: 3413 },
+      { name: "인스퍼레이션 HEV", basePrice: 3858, options: ["플래티넘"], finalPrice: 4158 }
+    ],
+    packages: [
+      { name: "익스테리어 디자인", price: 200 },
+      { name: "플래티넘", price: 300 },
+      { name: "파노라마 선루프", price: 115 }
+    ],
+    promotions: [{ type: "저금리", amount: 130, condition: "하이브리드 특별 금리 환산", period: "2025 예시" }]
+  },
+  {
+    id: "hyundai-santafe-hybrid",
+    brand: "현대",
+    model: "싼타페 하이브리드",
+    segment: "중형",
+    popularity: 100,
+    summary: "패밀리 SUV 수요가 높은 중형 하이브리드 대표 모델",
+    imageTone: ["#f7dfc8", "#dff0ec"],
+    specs: { length: 4830, width: 1900, height: 1720, wheelbase: 2815, weight: 1905, efficiency: 15.5, displacement: 1598, fuel: "하이브리드", drivetrain: "FWD/AWD" },
+    safety: "전방 교차 충돌방지, 고속도로 주행 보조 2, 10에어백",
+    convenience: "듀얼 무선충전, 양방향 콘솔, 디지털 센터 미러",
+    trims: [
+      { name: "익스클루시브 HEV", basePrice: 4031, options: ["현대 스마트센스"], finalPrice: 4231 },
+      { name: "캘리그래피 HEV", basePrice: 5036, options: ["6인승", "보스 사운드"], finalPrice: 5366 }
+    ],
+    packages: [
+      { name: "현대 스마트센스", price: 200 },
+      { name: "6인승", price: 104 },
+      { name: "보스 사운드", price: 226 }
+    ],
+    promotions: [{ type: "친환경 혜택", amount: 170, condition: "패밀리 HEV 구매 지원 예시", period: "2025 예시" }]
+  },
+  {
+    id: "kia-sportage-hybrid",
+    brand: "기아",
+    model: "스포티지 하이브리드",
+    segment: "준중형",
+    popularity: 98,
+    summary: "높은 연비와 실내 활용성을 모두 갖춘 준중형 하이브리드 SUV",
+    imageTone: ["#cfe8ff", "#ecf8df"],
+    specs: { length: 4660, width: 1865, height: 1665, wheelbase: 2755, weight: 1690, efficiency: 16.7, displacement: 1598, fuel: "하이브리드", drivetrain: "FWD/AWD" },
+    safety: "원격 스마트 주차, 후방 교차 충돌방지, 차로 유지",
+    convenience: "파노라믹 커브드 디스플레이, 빌트인 캠, 전동 트렁크",
+    trims: [
+      { name: "프레스티지 HEV", basePrice: 3263, options: ["스타일"], finalPrice: 3463 },
+      { name: "시그니처 HEV", basePrice: 3968, options: ["프리미엄"], finalPrice: 4238 }
+    ],
+    packages: [
+      { name: "스타일", price: 200 },
+      { name: "프리미엄", price: 270 },
+      { name: "드라이브 와이즈", price: 120 }
+    ],
+    promotions: [{ type: "저금리", amount: 140, condition: "HEV 특별 금리 환산", period: "2025 예시" }]
+  },
+  {
+    id: "kia-sorento-hybrid",
+    brand: "기아",
+    model: "쏘렌토 하이브리드",
+    segment: "중형",
+    popularity: 100,
+    summary: "가족용 중형 SUV와 고효율 파워트레인을 결합한 인기 하이브리드",
+    imageTone: ["#f2d8cc", "#d7eef4"],
+    specs: { length: 4815, width: 1900, height: 1700, wheelbase: 2815, weight: 1900, efficiency: 15.7, displacement: 1598, fuel: "하이브리드", drivetrain: "FWD/AWD" },
+    safety: "전방 교차 충돌방지, 고속도로 주행 보조 2, 다중 충돌방지",
+    convenience: "12.3인치 디스플레이, 릴랙션 시트, 6/7인승 선택",
+    trims: [
+      { name: "프레스티지 HEV", basePrice: 3929, options: ["드라이브 와이즈"], finalPrice: 4139 },
+      { name: "그래비티 HEV", basePrice: 4965, options: ["컴포트", "HUD"], finalPrice: 5305 }
+    ],
+    packages: [
+      { name: "드라이브 와이즈", price: 210 },
+      { name: "컴포트", price: 180 },
+      { name: "HUD", price: 160 }
+    ],
+    promotions: [{ type: "친환경 혜택", amount: 180, condition: "중형 HEV 구매 지원 예시", period: "2025 예시" }]
+  },
+  {
+    id: "renault-arkana-hybrid",
+    brand: "르노코리아",
+    model: "아르카나 E-Tech 하이브리드",
+    segment: "소형",
+    popularity: 80,
+    summary: "쿠페형 디자인에 E-Tech 하이브리드 효율을 더한 도심형 SUV",
+    imageTone: ["#e4dcff", "#edf8e8"],
+    specs: { length: 4570, width: 1820, height: 1570, wheelbase: 2720, weight: 1475, efficiency: 17.4, displacement: 1598, fuel: "하이브리드", drivetrain: "FWD" },
+    safety: "긴급제동 보조, 차선이탈 경보, 어댑티브 크루즈",
+    convenience: "이지 커넥트, 9.3인치 내비, 앰비언트 라이트",
+    trims: [
+      { name: "테크노 E-Tech", basePrice: 3095, options: ["드라이빙 어시스트"], finalPrice: 3255 },
+      { name: "아이코닉 E-Tech", basePrice: 3370, options: ["BOSE 패키지"], finalPrice: 3620 }
+    ],
+    packages: [
+      { name: "드라이빙 어시스트", price: 160 },
+      { name: "BOSE 패키지", price: 250 },
+      { name: "블랙 루프", price: 45 }
+    ],
+    promotions: [{ type: "친환경 혜택", amount: 150, condition: "E-Tech 구매 지원 예시", period: "2025 예시" }]
+  },
+  {
+    id: "renault-grand-koleos-hybrid",
+    brand: "르노코리아",
+    model: "그랑 콜레오스 E-Tech 하이브리드",
+    segment: "중형",
+    popularity: 92,
+    summary: "넓은 실내와 최신 인포테인먼트에 하이브리드 효율을 더한 중형 SUV",
+    imageTone: ["#d5eef4", "#e7f2d9"],
+    specs: { length: 4780, width: 1880, height: 1680, wheelbase: 2820, weight: 1810, efficiency: 15.7, displacement: 1499, fuel: "하이브리드", drivetrain: "FWD" },
+    safety: "능동형 운전자 보조, 360도 카메라, 긴급제동",
+    convenience: "오픈R 파노라마 스크린, 동승석 디스플레이, 전동 트렁크",
+    trims: [
+      { name: "테크노 E-Tech", basePrice: 3995, options: ["어시스트 패키지"], finalPrice: 4195 },
+      { name: "에스프리 알핀 E-Tech", basePrice: 4560, options: ["파노라마 루프"], finalPrice: 4830 }
+    ],
+    packages: [
+      { name: "어시스트 패키지", price: 200 },
+      { name: "파노라마 루프", price: 140 },
+      { name: "프리미엄 사운드", price: 130 }
+    ],
+    promotions: [{ type: "저금리", amount: 160, condition: "E-Tech 특별 금리 환산", period: "2025 예시" }]
   }
 ];
 
