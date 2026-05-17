@@ -586,6 +586,48 @@ select {
   font-weight: 800;
 }
 
+.selected-compare-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 42px;
+  margin: 12px 0 4px;
+  align-items: center;
+}
+
+.compare-token {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 6px 8px 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fffdf0;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.compare-token button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background: #191919;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.compare-empty {
+  color: var(--sub);
+  font-size: 14px;
+}
+
 .simulator {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;

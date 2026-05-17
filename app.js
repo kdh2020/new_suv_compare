@@ -630,6 +630,20 @@ function addCompare(id) {
 function renderCompare() {
   const selected = state.compare.map(byId).filter(Boolean);
   const wrap = document.querySelector("#compareTable");
+  const selectedList = document.querySelector("#selectedCompareList");
+  selectedList.innerHTML = selected.length
+    ? selected
+        .map(
+          (vehicle) => `
+            <span class="compare-token">
+              ${vehicle.brand} ${vehicle.model}
+              <button type="button" data-action="remove-compare" data-id="${vehicle.id}" aria-label="${vehicle.model} 비교에서 삭제">×</button>
+            </span>
+          `
+        )
+        .join("")
+    : `<span class="compare-empty">아직 선택된 비교 차량이 없습니다.</span>`;
+
   if (!selected.length) {
     wrap.innerHTML = `<div class="detail-card"><p class="muted">비교할 차량을 선택해 주세요. 카드의 비교 담기 버튼으로도 추가할 수 있습니다.</p></div>`;
     return;
